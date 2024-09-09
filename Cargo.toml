@@ -1,3 +1,12 @@
 [workspace]
 members = ["crm"]
 resolver = "2"
+
+[workspace.dependencies]
+anyhow = "1.0.87"
+prost = "0.13.2"
+prost-build = "0.13.2"
+prost-types = "0.13.2"
+tokio = { version = "1.40.0", features = ["rt", "rt-multi-thread", "macros"] }
+tonic = { version = "0.12.2", features = ["zstd", "tls"] }
+tonic-build = "0.12.2"
