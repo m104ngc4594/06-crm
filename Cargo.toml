@@ -1,12 +1,20 @@
 [workspace]
-members = ["crm"]
+members = ["crm", "user-stat"]
 resolver = "2"
 
 [workspace.dependencies]
 anyhow = "1.0.87"
+chrono = { version = "0.4.38", features = ["serde"] }
 prost = "0.13.2"
 prost-build = "0.13.2"
 prost-types = "0.13.2"
+serde = { version = "1.0.210", features = ["derive"] }
+sqlx = { version = "0.8.2", features = [
+    "chrono",
+    "postgres",
+    "runtime-tokio",
+    "tls-rustls",
+] }
 tokio = { version = "1.40.0", features = ["rt", "rt-multi-thread", "macros"] }
 tonic = { version = "0.12.2", features = ["zstd", "tls"] }
 tonic-build = "0.12.2"
