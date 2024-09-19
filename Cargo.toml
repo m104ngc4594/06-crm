@@ -9,6 +9,7 @@ prost = "0.13.2"
 prost-build = "0.13.2"
 prost-types = "0.13.2"
 serde = { version = "1.0.210", features = ["derive"] }
+serde_yaml = "0.9.34"
 sqlx = { version = "0.8.2", features = [
     "chrono",
     "postgres",
@@ -18,3 +19,5 @@ sqlx = { version = "0.8.2", features = [
 tokio = { version = "1.40.0", features = ["rt", "rt-multi-thread", "macros"] }
 tonic = { version = "0.12.2", features = ["zstd", "tls"] }
 tonic-build = "0.12.2"
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
