@@ -1,0 +1,28 @@
+[package]
+name = "crm-metadata"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+sqlx = { workspace = true }
+anyhow = { workspace = true }
+prost = { workspace = true }
+prost-types = { workspace = true }
+tokio = { workspace = true }
+tonic = { workspace = true }
+serde = { workspace = true }
+chrono = { workspace = true }
+rand = "0.8.5"
+derive_builder = "0.20.1"
+futures = "0.3.30"
+serde_yaml = { workspace = true }
+itertools = "0.13.0"
+tracing = { workspace = true }
+tracing-subscriber = { workspace = true }
+fake = { version = "2.9.2", features = ["derive", "chrono"] }
+tokio-stream = "0.1.16"
+
+[build-dependencies]
+anyhow = { workspace = true }
+proto-builder-trait = { git = "https://github.com/m104ngc4594/proto-builder-trait.git" }
+tonic-build = { workspace = true }
