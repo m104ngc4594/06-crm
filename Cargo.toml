@@ -21,3 +21,9 @@ tonic = { version = "0.12.2", features = ["zstd", "tls"] }
 tonic-build = "0.12.2"
 tracing = "0.1.40"
 tracing-subscriber = { version = "0.3.18", features = ["env-filter"] }
+derive_builder = "0.20.1"
+futures = "0.3.30"
+itertools = "0.13.0"
+proto-builder-trait = { git = "https://github.com/m104ngc4594/proto-builder-trait.git" }
+tokio-stream = "0.1.16"
+rand = "0.8.5"

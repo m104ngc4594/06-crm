@@ -12,17 +12,19 @@ tokio = { workspace = true }
 tonic = { workspace = true }
 serde = { workspace = true }
 chrono = { workspace = true }
-rand = "0.8.5"
-derive_builder = "0.20.1"
-futures = "0.3.30"
+rand = { workspace = true }
+derive_builder = { workspace = true }
+futures = { workspace = true }
 serde_yaml = { workspace = true }
-itertools = "0.13.0"
+itertools = { workspace = true }
 tracing = { workspace = true }
 tracing-subscriber = { workspace = true }
+tokio-stream = { workspace = true }
+uuid = { version = "1.10.0", features = ["v4"] }
 
 [build-dependencies]
 anyhow = { workspace = true }
-proto-builder-trait = { git = "https://github.com/m104ngc4594/proto-builder-trait.git" }
+proto-builder-trait = { workspace = true }
 tonic-build = { workspace = true }
 
 [dev-dependencies]
