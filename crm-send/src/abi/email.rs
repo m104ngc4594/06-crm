@@ -20,21 +20,6 @@ impl Sender for EmailMessage {
     }
 }
 
-#[cfg(test)]
-impl EmailMessage {
-    pub fn fake() -> Self {
-        use fake::{faker::internet::en::SafeEmail, Fake};
-        use uuid::Uuid;
-        Self {
-            message_id: Uuid::new_v4().to_string(),
-            sender: SafeEmail().fake(),
-            reciepients: vec![SafeEmail().fake()],
-            subject: "Hello".to_string(),
-            body: "Hello, world!".to_string(),
-        }
-    }
-}
-
 impl From<EmailMessage> for Message {
     fn from(email: EmailMessage) -> Self {
         Self::Email(email)
@@ -45,6 +30,21 @@ impl From<EmailMessage> for SendRequest {
     fn from(email: EmailMessage) -> Self {
         Self {
             message: Some(email.into()),
+        }
+    }
+}
+
+#[cfg(feature = "test_utils")]
+impl EmailMessage {
+    pub fn fake() -> Self {
+        use fake::{faker::internet::en::SafeEmail, Fake};
+        use uuid::Uuid;
+        Self {
+            message_id: Uuid::new_v4().to_string(),
+            sender: SafeEmail().fake(),
+            reciepients: vec![SafeEmail().fake()],
+            subject: "Hello".to_string(),
+            body: "Hello, world!".to_string(),
         }
     }
 }

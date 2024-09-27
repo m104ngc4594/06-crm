@@ -1,5 +1,5 @@
 server:
-  port: 50002
+  port: 50003
 auth:
   pk: -----BEGIN PUBLIC KEY-----
     MCowBQYDK2VwAyEAVhtL0S4Up79ELrb54QZeQmZhj65n+wqgPhcZWiH/j5U=

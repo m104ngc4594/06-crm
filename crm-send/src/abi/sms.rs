@@ -20,20 +20,6 @@ impl Sender for SmsMessage {
     }
 }
 
-#[cfg(test)]
-impl SmsMessage {
-    pub fn fake() -> Self {
-        use fake::{faker::phone_number::zh_cn::PhoneNumber, Fake};
-        use uuid::Uuid;
-        Self {
-            message_id: Uuid::new_v4().to_string(),
-            sender: PhoneNumber().fake(),
-            reciepients: vec![PhoneNumber().fake()],
-            body: "Hello, world!".to_string(),
-        }
-    }
-}
-
 impl From<SmsMessage> for Message {
     fn from(sms: SmsMessage) -> Self {
         Self::Sms(sms)
@@ -44,6 +30,20 @@ impl From<SmsMessage> for SendRequest {
     fn from(sms: SmsMessage) -> Self {
         Self {
             message: Some(sms.into()),
+        }
+    }
+}
+
+#[cfg(feature = "test_utils")]
+impl SmsMessage {
+    pub fn fake() -> Self {
+        use fake::{faker::phone_number::zh_cn::PhoneNumber, Fake};
+        use uuid::Uuid;
+        Self {
+            message_id: Uuid::new_v4().to_string(),
+            sender: PhoneNumber().fake(),
+            reciepients: vec![PhoneNumber().fake()],
+            body: "Hello, world!".to_string(),
         }
     }
 }

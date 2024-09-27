@@ -27,3 +27,6 @@ itertools = "0.13.0"
 proto-builder-trait = { git = "https://github.com/m104ngc4594/proto-builder-trait.git" }
 tokio-stream = "0.1.16"
 rand = "0.8.5"
+crm-metadata = { path = "crm-metadata" }
+crm-send = { path = "crm-send" }
+user-stat = { path = "user-stat" }

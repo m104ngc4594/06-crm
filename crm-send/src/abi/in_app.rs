@@ -20,19 +20,6 @@ impl Sender for InAppMessage {
     }
 }
 
-#[cfg(test)]
-impl InAppMessage {
-    pub fn fake() -> Self {
-        use uuid::Uuid;
-        Self {
-            message_id: Uuid::new_v4().to_string(),
-            device_id: Uuid::new_v4().to_string(),
-            title: "Hello".to_string(),
-            body: "Hello, world!".to_string(),
-        }
-    }
-}
-
 impl From<InAppMessage> for Message {
     fn from(msg: InAppMessage) -> Self {
         Self::InApp(msg)
@@ -43,6 +30,19 @@ impl From<InAppMessage> for SendRequest {
     fn from(msg: InAppMessage) -> Self {
         Self {
             message: Some(msg.into()),
+        }
+    }
+}
+
+#[cfg(feature = "test_utils")]
+impl InAppMessage {
+    pub fn fake() -> Self {
+        use uuid::Uuid;
+        Self {
+            message_id: Uuid::new_v4().to_string(),
+            device_id: Uuid::new_v4().to_string(),
+            title: "Hello".to_string(),
+            body: "Hello, world!".to_string(),
         }
     }
 }
