@@ -13,7 +13,7 @@ pub struct EmailMessage {
     pub sender: ::prost::alloc::string::String,
     /// recipients of the email
     #[prost(string, repeated, tag = "4")]
-    pub reciepients: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
+    pub recipients: ::prost::alloc::vec::Vec<::prost::alloc::string::String>,
     /// body of the email
     #[prost(string, tag = "5")]
     pub body: ::prost::alloc::string::String,

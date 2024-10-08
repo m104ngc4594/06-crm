@@ -13,7 +13,7 @@ message EmailMessage {
     // sender of the email
     string sender = 3;
     // recipients of the email
-    repeated string reciepients = 4;
+    repeated string recipients = 4;
     // body of the email
     string body = 5;
 }

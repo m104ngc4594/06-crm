@@ -5,6 +5,7 @@ mod config;
 
 pub use config::AppConfig;
 
+pub use abi::Tpl;
 use futures::Stream;
 use pb::{
     meta_data_server::{MetaData, MetaDataServer},

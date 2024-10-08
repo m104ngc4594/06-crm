@@ -42,7 +42,7 @@ impl EmailMessage {
         Self {
             message_id: Uuid::new_v4().to_string(),
             sender: SafeEmail().fake(),
-            reciepients: vec![SafeEmail().fake()],
+            recipients: vec![SafeEmail().fake()],
             subject: "Hello".to_string(),
             body: "Hello, world!".to_string(),
         }
